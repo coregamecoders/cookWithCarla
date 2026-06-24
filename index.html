@@ -14,34 +14,35 @@
   <p>Simple recipes. Clean cooking. No clutter.</p>
 </header>
 
-<section class="search">
-  <input type="text" id="searchInput" placeholder="Search recipes..."/>
-</section>
+<!-- RECIPE CARDS -->
+<section class="recipes">
 
-<section class="recipes" id="recipeList">
-
-  <div class="card">
+  <div class="card" onclick="openRecipe('pasta')">
     <h2>Pasta Alfredo</h2>
-    <p>Creamy garlic pasta made in 20 minutes.</p>
+    <p>Creamy garlic pasta in 20 minutes.</p>
   </div>
 
-  <div class="card">
+  <div class="card" onclick="openRecipe('chicken')">
     <h2>Chicken Rice Bowl</h2>
-    <p>Healthy and filling protein meal.</p>
+    <p>Healthy protein-packed meal.</p>
   </div>
 
-  <div class="card">
+  <div class="card" onclick="openRecipe('cake')">
     <h2>Chocolate Cake</h2>
-    <p>Soft, rich and easy homemade dessert.</p>
+    <p>Soft, rich homemade dessert.</p>
   </div>
 
-  <div class="card">
+  <div class="card" onclick="openRecipe('toast')">
     <h2>Avocado Toast</h2>
-    <p>Quick breakfast with healthy fats.</p>
+    <p>Quick and healthy breakfast.</p>
   </div>
 
 </section>
+
+<!-- FULL RECIPE VIEW (hidden by default) -->
+<section id="recipeDetail" class="hidden"></section>
 
 <script src="script.js"></script>
+
 </body>
 </html>

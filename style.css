@@ -48,3 +48,23 @@ header h1 {
 .card:hover {
   transform: translateY(-5px);
 }
+
+.hidden {
+  display: none;
+}
+
+#recipeDetail {
+  padding: 40px;
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: blue;
+}
