@@ -5,13 +5,15 @@ const recipes = {
       "200g pasta",
       "2 cloves garlic",
       "1 cup cream",
-      "Salt & pepper"
+      "Salt",
+      "Pepper"
     ],
     steps: [
       "Boil pasta until soft",
-      "Cook garlic in butter",
-      "Add cream and mix",
-      "Combine with pasta"
+      "Cook garlic in pan",
+      "Add cream and mix well",
+      "Combine pasta and sauce",
+      "Serve hot"
     ]
   },
 
@@ -26,8 +28,9 @@ const recipes = {
     steps: [
       "Cook rice",
       "Grill chicken",
-      "Mix vegetables",
-      "Serve together"
+      "Add vegetables",
+      "Mix with soy sauce",
+      "Serve in bowl"
     ]
   },
 
@@ -37,13 +40,31 @@ const recipes = {
       "2 cups flour",
       "1 cup sugar",
       "2 eggs",
-      "Cocoa powder"
+      "Cocoa powder",
+      "Milk"
     ],
     steps: [
       "Mix dry ingredients",
       "Add eggs and milk",
-      "Bake at 180°C",
+      "Pour into pan",
+      "Bake at 180°C for 30 minutes",
       "Let it cool"
+    ]
+  },
+
+  toast: {
+    title: "Avocado Toast",
+    ingredients: [
+      "Bread slices",
+      "1 avocado",
+      "Salt",
+      "Olive oil"
+    ],
+    steps: [
+      "Toast bread",
+      "Mash avocado",
+      "Spread on toast",
+      "Add salt and olive oil"
     ]
   }
 };
@@ -51,8 +72,12 @@ const recipes = {
 function openRecipe(id) {
   const recipe = recipes[id];
 
+  if (!recipe) {
+    alert("Recipe not found!");
+    return;
+  }
+
   const detail = document.getElementById("recipeDetail");
-  const list = document.getElementById("recipeList");
 
   detail.innerHTML = `
     <div class="back-btn" onclick="goBack()">← Back</div>
@@ -69,11 +94,17 @@ function openRecipe(id) {
     </ol>
   `;
 
-  list.classList.add("hidden");
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.display = "none";
+  });
+
   detail.classList.remove("hidden");
 }
 
 function goBack() {
   document.getElementById("recipeDetail").classList.add("hidden");
-  document.getElementById("recipeList").classList.remove("hidden");
+
+  document.querySelectorAll(".card").forEach(card => {
+    card.style.display = "block";
+  });
 }
